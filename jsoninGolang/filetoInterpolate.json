@@ -1,0 +1,21 @@
+{
+  "database": {
+    "host": "localhost",
+    "port": 8000
+  },
+  "credentials": {
+    "storage_account_name": "u5bddeab83be",
+    "primary_access_key": "yJx3Hf8a+3Kep8RM+pRpXsjwlortkGZqTFoXJiHyUHl9XYOE25ZIMfcNv/yO1NPTTP8e/KL7+rPBHtJj8wN8Og==",
+    "secondary_access_key": "GRARKT0fHdEbQ9HiO5yY5LetUA6vdzVWZmbpKrSKTH4zkHqg/VVnPke2zdKRdzIL42Eu/tjl+EWj00VPqx3Daw=="
+  },
+  "secrets": [
+    {
+      "labels": "json-value",
+      "azure": {
+        "storage_account_name": "azureprod",
+        "primary_access_key": "yJx3Hf8a+3Kep8RM+pRpXsjwlortkGZqTFoXJiHyUHl9XYOE25ZIMfcNv/yO1NPTTP8e/KL7+rPBHtJj8wN8Og==",
+        "secondary_access_key": "GRARKT0fHdEbQ9HiO5yY5LetUA6vdzVWZmbpKrSKTH4zkHqg/VVnPke2zdKRdzIL42Eu/tjl+EWj00VPqx3Daw=="
+      }
+    }
+  ]
+}
