@@ -28,8 +28,22 @@ func newDeck() deck{
 	return cards
 }
 
+/*
+	Function in this case (d deck) is called a receiver which is having a print method attached to it.
+	so any value of type deck can call this print method.
+ */
+
 func (d deck) print(){
-	for _, card:= range d {
-		fmt.Println(card)
+	for i, card:= range d {
+		fmt.Println(i,card)
 	}
+}
+
+/*
+	Here we are slicing the cards of type deck with number of handSize we need to take.
+
+ */
+
+func deal(d deck, handSize int) (deck, deck) {
+	return d[:handSize], d[handSize:]
 }
