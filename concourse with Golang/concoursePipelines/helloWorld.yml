@@ -1,0 +1,45 @@
+resources:
+  - name: container-resource
+    type: time
+    source:
+      interval: 60m
+
+jobs:
+  - name: my-golang-job
+    plan:
+      - get: container-resource
+        trigger: true
+      - task: golang-tasks
+        params:
+          OWNER: bishwajit
+        config:
+          platform: linux
+          image_resource:
+            type: docker-image
+            source:
+              repository: golang
+              tag: latest
+          run:
+            path: /bin/sh
+            args:
+              - -c
+              - |
+                echo "User: `whoami`"
+                echo "Go Version: `go version`"
+                echo "Hostname is : $HOSTNAME"
+                echo "Owner is: $OWNER"
+                echo foo > /tmp/word.txt
+                export MAGIC_WORD=`cat /tmp/word.txt`
+                echo "MagicWord is : $MAGIC_WORD"
+                cat > app.go << EOF
+                package main
+
+                import "fmt"
+
+                func main(){
+                  fmt.Println("Hello World")
+                }
+                EOF
+                go build app.go
+                echo "Go App Executing"
+                ./app
