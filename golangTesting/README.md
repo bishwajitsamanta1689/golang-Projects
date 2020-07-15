@@ -9,6 +9,12 @@
 * Package name for Testing.
     * import testing
 * Function name for testing should start with `Test`
+    * Example:
+    ```
+       func TestAdd(){
+    
+       }
+  ```
 
 |Function Name | Description|
 |:-|:-|
