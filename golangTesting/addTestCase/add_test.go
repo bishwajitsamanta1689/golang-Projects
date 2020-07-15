@@ -1,6 +1,7 @@
 package main
 
 import (
+	"io/ioutil"
 	"testing"
 )
 
@@ -23,5 +24,14 @@ func TestAdd(t *testing.T){
 		if result != test.expected {
 			t.Fatal("Expected result not given")
 		}
+	}
+}
+func TestStringData(t *testing.T){
+	data, err:= ioutil.ReadFile("testdata/test.data")
+	if err != nil {
+		t.Fatal("Could not Open the File")
+	}
+	if string(data) != "hey world" {
+		t.Fatal("Expected Text not Matched")
 	}
 }
