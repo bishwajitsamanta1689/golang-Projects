@@ -45,7 +45,7 @@ func TestHttpRequest(t *testing.T){
 		_, _ = io.WriteString(w, "{\"status\":\"working\"}")
 	}
 
-	req:= httptest.NewRequest("GET", "https://google.com", nil)
+	req:= httptest.NewRequest("GET", "https://google.com/", nil)
 	w:= httptest.NewRecorder()
 	handler(w,req)
 
