@@ -31,7 +31,7 @@ func TestStringData(t *testing.T){
 	if err != nil {
 		t.Fatal("Could not Open the File")
 	}
-	if string(data) != "hey bishwajit" {
+	if string(data) != "key = value" {
 		t.Fatal("Expected Text not Matched")
 	}
 }
